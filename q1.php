@@ -18,7 +18,7 @@ class Q1 implements IQuestion
 		}
 	}
 
-	private function print_record($data)
+	protected function print_record($data)
 	{
 		foreach ($data as $key => $val) {
 			if (is_array($val)) {
@@ -30,5 +30,3 @@ class Q1 implements IQuestion
 	}
 
 }
-
-(new Q1())->run();
