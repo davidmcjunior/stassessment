@@ -1,5 +1,6 @@
 <?php
 
+require 'guest_data.php';
 require_once 'i_question.php';
 
 class Q1 implements IQuestion
@@ -7,8 +8,6 @@ class Q1 implements IQuestion
 
 	public function run(...$args)
 	{
-		require 'guest_data.php';
-
 		$record_num = 0;
 
 		foreach (GuestData::data() as $guest) {

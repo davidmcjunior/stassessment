@@ -5,13 +5,13 @@ require_once 'q1.php';
 class Q2 extends Q1
 {
 
-	private $available_sort_fields = [
+	private array $available_sort_fields = [
 		'first_name', 'last_name', 'middle_name', 'guest_id','guest_type',
 		'gender','booking_number', 'ship_code','room_no', 'start_time','end_time',
 		'is_checked_in','account_id', 'status_id', 'account_limit', 'allow_charges'
 	];
 
-	public function run(...$args)
+	public function run(...$args): void
 	{
 		$sort_fields = readline("Enter one or more sort fields seperated by commas:\n");
 		$sort_fields = explode(',', str_replace(' ', '', $sort_fields));
@@ -25,16 +25,14 @@ class Q2 extends Q1
 			}
 
 		} else {
-			echo "Ooops: one or more of the fields you entered are incorrect!\n";
+			echo "Oops: one or more of the fields you entered are incorrect!\n";
 			readline("Please re-enter one or more sort fields seperated by commas:\n");
 		}
 
 	}
 
-	private function get_data($sort_keys = ['account_id'])
+	private function get_data($sort_keys = ['account_id']): array
 	{
-		require 'guest_data.php';
-
 		$data = GuestData::data();
 
 		foreach ($sort_keys as $key) {
@@ -46,7 +44,7 @@ class Q2 extends Q1
 		return $data;
 	}
 
-	private function sort($a, $b, $key)
+	private function sort($a, $b, $key): int
 	{
 		if (array_key_exists($key, $a)) {
 			return strcmp($a[$key], $b[$key]);
