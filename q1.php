@@ -5,7 +5,7 @@ require_once 'i_question.php';
 class Q1 implements IQuestion
 {
 
-	public function run()
+	public function run(...$args)
 	{
 		require 'guest_data.php';
 

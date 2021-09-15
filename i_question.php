@@ -2,5 +2,5 @@
 
 interface iquestion
 {
-	public function run();
+	public function run(...$args);
 }
