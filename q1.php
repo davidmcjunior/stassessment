@@ -21,7 +21,7 @@ class Q1 implements IQuestion
 	{
 		foreach ($data as $key => $val) {
 			if (is_array($val)) {
-				$this->print_record($val, 1);
+				$this->print_record($val);
 			} else {
 				echo $key . ': ' . $val . "\n";
 			}
