@@ -3,9 +3,14 @@
 class TaxRate
 {
 
-	public static function get($address): float
+	/**
+	 * @param Address $address
+	 *
+	 * @return float
+	 */
+	public static function get(Address $address): float
 	{
-		return 0.07;
+		return 1.07;
 	}
 
 }

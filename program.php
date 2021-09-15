@@ -2,7 +2,7 @@
 
 require_once 'q1.php';
 require_once 'q2.php';
-// require_once 'q3.php';
+require_once 'q3.php';
 
 class Program
 {
@@ -21,7 +21,7 @@ class Program
 					break;
 
 				case 'Q3':
-					//(new Q3())->run();
+					(new Q3())->run();
 					break;
 			}
 
