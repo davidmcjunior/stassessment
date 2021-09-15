@@ -8,7 +8,7 @@ class Cart extends Model
 
 	/**
 	 * @param Customer $customer
-	 * @param array $items
+	 * @param Item[] $items
 	 */
 	public function __construct(
 		public Customer $customer,
@@ -18,12 +18,26 @@ class Cart extends Model
 	/**
 	 * @return float
 	 */
+	public function get_shipping(): float
+	{
+		$total = 0.0;
+
+		foreach ($this->items as $item) {
+			$total += Shipping::get_rate($this->customer->addresses['shipping'], $item);
+		}
+
+		return $total;
+	}
+
+	/**
+	 * @return float
+	 */
 	public function get_subtotal(): float
 	{
 		$total = 0.0;
 
 		foreach ($this->items as $item) {
-			$total = $item->quanity * $item->price;
+			$total = $item->quantity * $item->price;
 		}
 
 		return $total;

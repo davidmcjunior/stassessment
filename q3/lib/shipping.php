@@ -9,21 +9,17 @@ class Shipping
 
 	/**
 	 * @param Address $destination
-	 * @param Date $date
-	 * @param array|int[] $dimensions
-	 * @param float $weight
+	 * @param Item $item
 	 *
 	 * @return float
 	 */
 	public static function get_rate(
 		Address $destination,
-		Date    $date,
-		array   $dimensions = [0, 0, 0],
-		float   $weight = 0.0
+		Item $item
 	): float
 	{
 		// Get whatever info from the address itself to call the shipment API...
-		return ShippingRate::get($destination, $date, $dimensions, $weight);
+		return ShippingRate::get($destination, $item->dimensions, $item->weight);
 	}
 
 }
