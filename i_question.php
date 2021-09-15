@@ -2,5 +2,5 @@
 
 interface IQuestion
 {
-	public function run(...$args);
+	public function run(...$args): void;
 }

@@ -6,7 +6,7 @@ require_once 'i_question.php';
 class Q1 implements IQuestion
 {
 
-	public function run(...$args)
+	public function run(...$args): void
 	{
 		$record_num = 0;
 
@@ -17,7 +17,7 @@ class Q1 implements IQuestion
 		}
 	}
 
-	protected function print_record($data)
+	protected function print_record($data): void
 	{
 		foreach ($data as $key => $val) {
 			if (is_array($val)) {
