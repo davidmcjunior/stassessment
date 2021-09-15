@@ -7,7 +7,7 @@ require_once 'q2.php';
 class Program
 {
 
-	public static function main()
+	public static function main(): void
 	{
 
 		while ($question = readline("Enter Q1, Q2 or Q3...\n")) {

@@ -1,6 +1,6 @@
 <?php
 
-interface iquestion
+interface IQuestion
 {
 	public function run(...$args);
 }
